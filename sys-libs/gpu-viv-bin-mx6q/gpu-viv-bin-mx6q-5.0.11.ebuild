@@ -10,7 +10,7 @@ DESCRIPTION="GPU driver and apps for imx6"
 #at the moment only with support for the framebuffer
 HOMEPAGE="https://github.com/Freescale/meta-fsl-arm"
 
-MY_PV=${PV}.p4.5-hfp
+MY_PV=${PV}.p8.3-hfp
 MY_PN=imx-gpu-viv
 SRC_URI="http://www.freescale.com/lgfiles/NMG/MAD/YOCTO/${MY_PN}-${MY_PV}.bin"
 
