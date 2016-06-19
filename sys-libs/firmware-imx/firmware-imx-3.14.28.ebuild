@@ -32,6 +32,6 @@ src_unpack() {
 src_install() {
 	mkdir -p ${D}lib/firmware
 
+	mv firmware/sdma ${D}lib/firmware/
 	mv firmware/vpu ${D}lib/firmware/
-
 }
