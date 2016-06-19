@@ -9,7 +9,7 @@ inherit eutils
 DESCRIPTION="Cubox-i xorg driver"
 HOMEPAGE="https://github.com/Freescale/meta-fsl-arm"
 
-SRC_URI="http://www.freescale.com/lgfiles/NMG/MAD/YOCTO/xserver-xorg-video-imx-viv-3.10.17-1.0.0_beta.tar.gz"
+SRC_URI="http://www.freescale.com/lgfiles/NMG/MAD/YOCTO/xserver-xorg-video-imx-viv-${PV}-1.0.0_beta.tar.gz"
 
 LICENSE="CLOSED"
 
