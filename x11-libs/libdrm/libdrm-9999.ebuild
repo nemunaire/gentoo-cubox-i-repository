@@ -4,7 +4,7 @@
 
 EAPI=5
 
-EGIT_REPO_URI="git://github.com/austriancoder/libdrm"
+EGIT_REPO_URI="git://github.com/etnaviv/libdrm"
 
 XORG_MULTILIB=yes
 inherit xorg-2
