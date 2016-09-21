@@ -4,16 +4,18 @@
 
 EAPI=5
 
-EGIT_REPO_URI="git://github.com/etnaviv/libdrm"
-
 XORG_MULTILIB=yes
-inherit xorg-2
+inherit autotools xorg-2 git-r3
 
 DESCRIPTION="X.Org libdrm library"
 HOMEPAGE="https://dri.freedesktop.org/"
 
+EGIT_REPO_URI="git://github.com/austriancoder/libdrm"
+EGIT_BRANCH="master"
+SRC_URI=""
+
 KEYWORDS=""
-VIDEO_CARDS="amdgpu etnaviv exynos freedreno intel nouveau omap radeon tegra vmware"
+VIDEO_CARDS="amdgpu etnaviv exynos freedreno intel nouveau omap radeon tegra vc4 vmware"
 for card in ${VIDEO_CARDS}; do
 	IUSE_VIDEO_CARDS+=" video_cards_${card}"
 done
@@ -32,6 +34,7 @@ src_prepare() {
 		# tests are restricted, no point in building them
 		sed -ie 's/tests //' "${S}"/Makefile.am
 	fi
+	eautoreconf
 	xorg-2_src_prepare
 }
 
@@ -49,6 +52,7 @@ src_configure() {
 		$(use_enable video_cards_omap omap-experimental-api)
 		$(use_enable video_cards_radeon radeon)
 		$(use_enable video_cards_tegra tegra-experimental-api)
+		$(use_enable video_cards_vc4 vc4)
 		$(use_enable video_cards_vmware vmwgfx)
 		$(use_enable libkms)
 		# valgrind installs its .pc file to the pkgconfig for the primary arch
